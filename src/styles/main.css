@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: #d80505d7;
+    background-color: #4f8bcf91;
+    color: #ffffff;
+    font-family: "Bungee Spice", sans-serif;
+}
+
+.container {
+    width: 790px;
+    border: 1px solid #d80505d7;
+    background-color: #000000d1;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.521);
+}
+
+.container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+header h2 {
+    font-size: 1.55rem;
+
+}
+
+header .column {
+    display: flex;
+    align-items: center;
+}
+
+header .column span {
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 1.16rem;
+
+}
+
+.volume-slider input {
+    accent-color: #ffffff;
+}
+
+.keys-check input {
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #494545d7;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.keys-check input::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #9b9b9b;
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 0.3rem;
+    transition: all 0.3s ease;
+    transform: translateY(-50%);
+}
+
+.keys-check input:checked::before {
+    left: 2.1rem;
+    background-color: #ffffff;
+    cursor: pointer;
+
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 40px;
+
+}
+
+.piano-keys .key {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.piano-keys .white {
+    width: 70px;
+    height: 200px;
+    background: linear-gradient(#fffdfd 96%, #d3d3d3 100%);
+    border: 1px solid #000000;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 2px 2px 5px rgba(255, 251, 251, 0.521);
+    margin: 0 2px;
+}
+
+.piano-keys .black {
+    width: 45px;
+    height: 120px;
+    background: linear-gradient(#000000 96%, #434343 100%);
+    border: 1px solid #000000;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.521);
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+
+
+}
+.piano-keys .white.active {
+    background: linear-gradient(#d3d3d3, #b1b1b1);
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.521);
+}
+
+.piano-keys .black.active {
+    background: linear-gradient(#1a1919, #000000);
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.1);
+}
