@@ -1,6 +1,8 @@
 const pianoKeys = document.querySelectorAll(".piano-keys .key");
 let mapedKeys = [];
 let audio = new Audio("./src/tunes/a.wav");
+const volumeSlider = document.querySelector(".volume-slider input");
+const keysCheckbox = document.querySelector(".keys-check input");
 
 const playTune = (key) => {
     audio.src = `./src/tunes/${key}.wav`;
@@ -22,9 +24,17 @@ document.addEventListener("keydown", (e) => {
     if (mapedKeys.includes(e.key)) {
         playTune(e.key);
     }
-
-    const key = e.key;
-    pianoKeys.forEach((pianoKey) => {
-        if (pianoKey.dataset.key === key) playTune(key);
-    });
 });
+
+// Função para ajustar o volume do áudio
+const handleVolume = (e) => {
+    audio.volume = e.target.value / 100;
+}
+
+const showHideKeys = () => {
+    pianoKeys.forEach(key => key.classList.toggle("hide"));
+}
+
+volumeSlider.addEventListener("input", handleVolume);
+
+keysCheckbox.addEventListener("click", showHideKeys);
